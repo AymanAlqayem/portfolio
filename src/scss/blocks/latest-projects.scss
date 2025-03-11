@@ -1,0 +1,68 @@
+@use '../utils/mixins';
+@use '../utils/variables' as vars;
+
+.latest-projects {
+  padding: vars.$spacing-unit * 2;
+  text-align: center;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: vars.$spacing-unit;
+  }
+
+  &__cards {
+    @include mixins.flex-center;
+    gap: vars.$spacing-unit;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__card {
+    width: 300px;
+    border: 1px solid vars.$primary-color;
+    padding: vars.$spacing-unit;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+
+    &:hover,
+    &:focus-within {
+      transform: scale(1.05);
+    }
+  }
+
+  &__card-image {}
+
+  &__card-title {
+    font-size: 1.25rem;
+    margin: vars.$spacing-unit 0;
+  }
+
+  &__card-description {}
+
+  &__button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: vars.$secondary-color;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: vars.$spacing-unit;
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: vars.$alternate-color;
+    }
+  }
+
+  @include mixins.media-query('tablet') {
+    &__card {
+      width: 250px;
+    }
+  }
+
+  @include mixins.media-query('mobile') {
+    &__card {
+      width: 100%;
+    }
+  }
+}

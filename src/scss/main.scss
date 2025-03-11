@@ -1,0 +1,13 @@
+// Import variables and mixins globally
+@use 'utils/variables' as vars;
+@use 'utils/mixins';
+
+// Import base styles
+@use 'base/base';
+@use 'base/resets';
+
+// Import block styles
+@use 'blocks/intro-banner';
+@use 'blocks/nav';
+@use 'blocks/latest-projects';
+@use 'blocks/footer';

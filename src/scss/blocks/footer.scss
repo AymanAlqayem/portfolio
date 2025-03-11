@@ -1,0 +1,13 @@
+@use '../utils/variables' as vars;
+
+.footer {
+  background-color: vars.$primary-color;
+  color: #fff;
+  text-align: center;
+  padding: vars.$spacing-unit;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+
+  &__text {}
+}

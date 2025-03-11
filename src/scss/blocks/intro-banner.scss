@@ -1,0 +1,69 @@
+@use '../utils/mixins';
+@use '../utils/variables' as vars;
+
+.intro-banner {
+  background-color: vars.$primary-color;
+  color: #fff;
+  padding: vars.$spacing-unit * 2;
+  text-align: center;
+
+  &__content {
+    @include mixins.flex-center;
+    flex-direction: column;
+    gap: vars.$spacing-unit;
+  }
+
+  &__photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__text {}
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__description {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: vars.$secondary-color;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: vars.$alternate-color;
+    }
+
+    &--alternate {
+      background-color: vars.$alternate-color;
+
+      &:hover,
+      &:focus {
+        background-color: vars.$secondary-color;
+      }
+    }
+  }
+
+  @include mixins.media-query('tablet') {
+    padding: vars.$spacing-unit;
+
+    &__photo {
+      width: 150px;
+      height: 150px;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+  }
+}

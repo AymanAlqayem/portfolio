@@ -1,0 +1,50 @@
+@use '../utils/mixins';
+@use '../utils/variables' as vars;
+
+.nav {
+  position: sticky;
+  top: 0;
+  background-color: vars.$primary-color;
+  padding: vars.$spacing-unit;
+  z-index: 1000;
+
+  &__container {
+    @include mixins.flex-center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__menu {
+    @include mixins.flex-center;
+
+    @include mixins.media-query('mobile') {
+      display: none; // Hidden for mobile, to be toggled with JS for burger menu
+    }
+  }
+
+  &__list {
+    @include mixins.flex-center;
+    gap: vars.$spacing-unit;
+  }
+
+  &__item {}
+
+  &__link {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: vars.$secondary-color;
+      border-radius: 4px;
+    }
+  }
+}
